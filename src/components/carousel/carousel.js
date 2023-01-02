@@ -3,7 +3,7 @@ import React, {useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { img_300, noPicture } from "../config/config.js";
-import "./carousel.css";
+import "../../carousel.css";
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -11,19 +11,22 @@ const Gallery = ({ item }) => {
   const [credits, setCredits] = useState([]);
 
   const items = credits.map((c) => (
-    <div className="carouselItem">
+
+    <div className="carousel-item" style={{cursor: 'pointer'}}>
+    <div className="carousel-item__img-container">
       <img
         src={c.profile_path ? `${img_300}/${c.profile_path}` : noPicture}
         alt={c?.name}
         onDragStart={handleDragStart}
-        className="carouselItem__img"
+        className="carousel-item__img"
       />
-      {c.name.length > 14 ? (
-        <b className="carouselItem__txt">{c?.name.slice(0, 10) + "..."}</b>
-      ) : (
-        <b className="carouselItem__txt">{c?.name}</b>
-      )}
     </div>
+    {c.name.length > 14 ? (
+      <b className="carousel-item__txt">{c?.name.slice(0, 10) + "..."}</b>
+    ) : (
+      <b className="carousel-item__txt">{c?.name}</b>
+    )}
+  </div>
   ));
 
   const responsive = {

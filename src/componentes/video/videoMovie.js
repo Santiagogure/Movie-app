@@ -31,7 +31,7 @@ export default function TransitionsModal({ item }) {
         allowfullscreen
         className="video"
       ></iframe>
-      <button
+      <button id="button-video"
         href={`https://www.youtube.com/watch?v=${video}`}
         type="submit"
         onClick={() => redirect()}

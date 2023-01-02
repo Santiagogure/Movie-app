@@ -189,6 +189,7 @@ export default function DataProvider({ children }) {
 
   //Local Storage
 
+  
   useEffect(() => {
     const movieFavorites = localStorage.getItem("fav-movie");
     if (movieFavorites) {

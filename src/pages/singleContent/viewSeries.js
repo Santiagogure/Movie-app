@@ -82,7 +82,7 @@ export const ViewSeries = () => {
                     <p id="overview">{item.overview}</p>
                   </div>
                   <div style={{ width: "100%" }}>
-                    <h2 style={{ display: "flex" }}>Casts</h2>
+                    <h2 id="cast-text" style={{ display: "flex" }}>Casts</h2>
                     <div className="cast"
                       style={{
                         display: "flex",

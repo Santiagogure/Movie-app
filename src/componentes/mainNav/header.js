@@ -52,17 +52,13 @@ export const Header = () => {
           style={{
             color: "white",
             display: "flex",
-            gap: "100px",
+            gap: "50px",
             fontSize: "14px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "50px",
-            }}
+          <div 
+            className="header-text"
+           
           >
             <Link
               onClick={() => changeSection(1)}

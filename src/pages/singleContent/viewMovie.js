@@ -4,6 +4,7 @@ import Carousel from "../../componentes/carousel/carousel";
 import { AppContext } from "../../context/dataProvider";
 import { Loader } from "../../loader/loader";
 import Video from "../../componentes/video/videoMovie";
+import "../../componentes/carousel/carousel.css";
 
 export const ViewMovie = ({ id }) => {
   const value = useContext(AppContext);
@@ -38,6 +39,8 @@ export const ViewMovie = ({ id }) => {
 
   window.scroll(0, 0);
 
+
+
   setTimeout(() => {
     setActive(true);
   }, 1000);
@@ -49,6 +52,7 @@ export const ViewMovie = ({ id }) => {
           {active ? (
             <div className="view-movie-container">
               <div className="movie-information">
+
               <h1 id="display-title">{item.title}</h1>
                 <div className="movie-img">
                   <img src={IMG_URL + item.poster_path} alt={item.title}></img>
@@ -81,8 +85,7 @@ export const ViewMovie = ({ id }) => {
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
                     <p id="overview">{item.overview}</p>
                   </div>
-                  <div style={{ width: "100%" }}>
-                    <h2 style={{ display: "flex" }}>Casts</h2>
+                  <div style={{ width: "100%", marginTop: '20px' }}>
                     <div className="cast"
                       style={{
                         display: "flex",
@@ -92,7 +95,7 @@ export const ViewMovie = ({ id }) => {
                         marginTop: "-50px",
                       }}
                     >
-                      <Carousel item={item} />
+                      <Carousel  item={item} />
                     </div>
                   </div>
                 </div>
