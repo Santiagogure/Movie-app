@@ -28,7 +28,7 @@ export const SearchRes = () => {
             placeholder="Search..."
             style={{textAlign: 'left', }}
           />
-           <box-icon style={{height: '50px'}} onClick={() => setDisplay()} name='x'></box-icon>
+           <box-icon style={{height: '50px', fill: 'white'}} onClick={() => setDisplay()} name='x'></box-icon>
         </form>
 
 

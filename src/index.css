@@ -316,6 +316,9 @@ align-items: center;
 
 
 /* Movie-info */
+
+
+
 .view-movie-container {
   margin-top: 10%;
 }
@@ -669,6 +672,7 @@ align-items: center;
     color: #fff;
     font-family: inherit;
     transition: 0.1s;
+    max-width: 50px
 } 
 
 
@@ -692,6 +696,8 @@ align-items: center;
     height: 100%;
   }
 
+ 
+
   #form-res {
     display: flex;
     align-items: center;
@@ -709,12 +715,16 @@ align-items: center;
 
 @media screen and (max-width: 580px) {
 
+
+  
   .menu {
     margin-left: 15%;
   }
 }
 
 @media screen and (max-width: 510px) {
+
+
 
   .header-text {
     gap: 10px
@@ -789,14 +799,29 @@ align-items: center;
 }
 
 .wrapper {
-  
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+.header-text {
+  margin-left: -50px;
 }
 
 
 }
 
 @media screen and (max-width: 450px) {
+  
+  header {
+    max-width: 400px;
+  }
 
+  .view-all-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -30%;
+  }
 
   #overview {
     width: 50%;
@@ -834,15 +859,22 @@ align-items: center;
     margin-left: -150px;
   }
 
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
   #search-input-logo-display {
     position: absolute;
     right: 0;
     left: -80px;
-    top: 35px;
+    font-size: 10px;
   }
 
   .categories h3 {
-    font-size: 10px;
+    font-size: 13px;
   }
 
 }

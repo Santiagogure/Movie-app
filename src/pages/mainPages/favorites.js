@@ -15,10 +15,12 @@ export const Favorites = () => {
       </h1>
       <div className="favorite-movies">
         {favoriteMovies.length <= 0 ? (
-          <h3 style={{ color: "white", marginTop: "100px", width: "100%" }}>
+          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <h3 style={{ color: "white", marginTop: "100px", width: "50%" }}>
             Oh, looks like you haven't added favorite movies yet. come back here
             when you're done
           </h3>
+          </div>
         ) : (
           <>
             <div>

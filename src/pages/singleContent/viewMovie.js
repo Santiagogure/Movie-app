@@ -46,7 +46,7 @@ export const ViewMovie = ({ id }) => {
   }, 1000);
 
   return (
-    <>
+    <div className="view-all-container">
       {secondItem.length <= 0 ? (
         <>
           {active ? (
@@ -177,6 +177,6 @@ export const ViewMovie = ({ id }) => {
           )}
         </>
       )}
-    </>
+    </div>
   );
 };

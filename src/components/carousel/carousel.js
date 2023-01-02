@@ -14,7 +14,7 @@ const Gallery = ({ item }) => {
 
     <div className="carousel-item" style={{cursor: 'pointer'}}>
     <div className="carousel-item__img-container">
-      <img
+      <img 
         src={c.profile_path ? `${img_300}/${c.profile_path}` : noPicture}
         alt={c?.name}
         onDragStart={handleDragStart}
