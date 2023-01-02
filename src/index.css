@@ -639,6 +639,9 @@ align-items: center;
 }
 
 @media screen and (max-width: 680px) {
+
+ 
+
   header {
     justify-content: center;
   }
@@ -724,7 +727,17 @@ align-items: center;
 
 @media screen and (max-width: 510px) {
 
+  .filter-movies {
+    margin-top: 12vh;
+  }
 
+  .movies-filter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+  }
+  
 
   .header-text {
     gap: 10px
