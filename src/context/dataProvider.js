@@ -42,7 +42,7 @@ export default function DataProvider({ children }) {
     if (!valueSearch) {
       return;
     }
-    console.log(valueSearch);
+
     setDisplay(false)
     e.preventDefault();
     navigate("/search", {
@@ -55,7 +55,7 @@ export default function DataProvider({ children }) {
 
   const fetchMovies = async () => {
     const { data } = await axios.get(
-      `https:api.themoviedb.org/3/discover/movie?${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pages}&with_genres=${genreforURL}`
+      `https://api.themoviedb.org/3/discover/movie?${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pages}&with_genres=${genreforURL}`
     );
     setMovies(data.results);
     setTotalPages(data.total_pages);
@@ -96,7 +96,6 @@ export default function DataProvider({ children }) {
 
   const addToList = (id, type) => {
     const check = favoriteMovies.every((item) => {
-      console.log("error");
       return item.id !== id;
     });
     if (check) {
@@ -105,9 +104,8 @@ export default function DataProvider({ children }) {
       });
       window.localStorage.setItem("fav-movie", JSON.stringify(favoriteMovies));
       setFavoriteMovies([...favoriteMovies, ...data]);
-      console.log("Pelicula añadida");
     } else {
-      alert("El item ya fue añadido");
+
     }
   };
 

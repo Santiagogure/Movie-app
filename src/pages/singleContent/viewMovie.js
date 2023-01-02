@@ -24,7 +24,6 @@ export const ViewMovie = ({ id }) => {
     movies.forEach((movie) => {
       if (movie.id == params.id) {
         setItem(movie);
-        console.log(movie);
       }
     });
   }, [params]);
@@ -33,7 +32,6 @@ export const ViewMovie = ({ id }) => {
     content.forEach((movie) => {
       if (movie.id == params.id) {
         setSecondItem(movie);
-        console.log(movie);
       }
     });
   }, [params]);

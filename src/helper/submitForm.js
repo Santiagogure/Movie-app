@@ -4,7 +4,7 @@ export const useForm = (initialState = {}) => {
   const [formState, setFormState] = useState(initialState);
 
   useEffect(() => {
-    console.log("Form state changed:", formState);
+
   }, [formState]);
 
   const onInputChange = ({ target }) => {
