@@ -82,7 +82,7 @@ export const Header = () => {
                 onClick={() => changeSection(2)}
                 className={active === 2 ? "second-h3-active" : ""}
               >
-                TV Series
+                TV 
               </h3>
             </Link>
 
