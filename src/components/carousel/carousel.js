@@ -3,7 +3,7 @@ import React, {useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { img_300, noPicture } from "../config/config.js";
-import "../../carousel.css";
+import "./carousel.css";
 
 const handleDragStart = (e) => e.preventDefault();
 
