@@ -1,0 +1,181 @@
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { useParams } from "react-router";
+import Carousel from "../../componentes/carousel/carousel";
+import { AppContext } from "../../context/dataProvider";
+import { Loader } from "../../loader/loader";
+import Video from "../../componentes/video/videoMovie";
+
+export const ViewMovie = ({ id }) => {
+  const value = useContext(AppContext);
+  const movies = value.movies;
+  const content = value.content;
+  const addToFavorites = value.addToFavorites;
+  const addToWatchlist = value.addToWatchlist;
+  const moviesContentAddToFavorites = value.moviesContentAddToFavorites;
+  const moviesContentAddToWatchlist = value.moviesContentAddToWatchlist;
+  const params = useParams();
+
+  const [active, setActive] = useState(false);
+  const [item, setItem] = useState([]);
+  const [secondItem, setSecondItem] = useState([]);
+  const IMG_URL = value.IMG_URL;
+
+  useEffect(() => {
+    movies.forEach((movie) => {
+      if (movie.id == params.id) {
+        setItem(movie);
+        console.log(movie);
+      }
+    });
+  }, [params]);
+
+  useEffect(() => {
+    content.forEach((movie) => {
+      if (movie.id == params.id) {
+        setSecondItem(movie);
+        console.log(movie);
+      }
+    });
+  }, [params]);
+
+  window.scroll(0, 0);
+
+  setTimeout(() => {
+    setActive(true);
+  }, 1000);
+
+  return (
+    <>
+      {secondItem.length <= 0 ? (
+        <>
+          {active ? (
+            <div className="view-movie-container">
+              <div className="movie-information">
+              <h1 id="display-title">{item.title}</h1>
+                <div className="movie-img">
+                  <img src={IMG_URL + item.poster_path} alt={item.title}></img>
+                  <div className="add-to">
+                    <box-icon
+                      id="add-favorites"
+                      onClick={() => addToFavorites(item.id)}
+                      type="solid"
+                      name="heart"
+                    ></box-icon>
+                    <box-icon
+                      id="add-watchlist"
+                      onClick={() => addToWatchlist(item.id)}
+                      name="task"
+                    ></box-icon>
+                  </div>
+                </div>
+                <div className="movie-data" style={{}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                      width: "100%",
+                    }}
+                  >
+                    <h1 id="disable-title">{item.title}</h1>
+                    {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
+                    <p id="overview">{item.overview}</p>
+                  </div>
+                  <div style={{ width: "100%" }}>
+                    <h2 style={{ display: "flex" }}>Casts</h2>
+                    <div className="cast"
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "600px",
+                        marginTop: "-50px",
+                      }}
+                    >
+                      <Carousel item={item} />
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <Video item={item} />
+            </div>
+          ) : (
+            <div className="menu">
+              <div style={{ marginTop: "150px" }} className="menu-loader">
+                <Loader />
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          {active ? (
+            <div className="view-movie-container">
+              <div className="movie-information">
+              <h1 id="display-title">{secondItem.title}</h1>
+                <div className="movie-img">
+                  <img
+                    src={IMG_URL + secondItem.poster_path}
+                    alt={secondItem.title}
+                  ></img>
+                  <div className="add-to">
+                    <box-icon
+                      id="add-favorites"
+                      onClick={() => moviesContentAddToFavorites(secondItem.id)}
+                      type="solid"
+                      name="heart"
+                    ></box-icon>
+                    <box-icon
+                      id="add-watchlist"
+                      onClick={() => moviesContentAddToWatchlist(secondItem.id)}
+                      name="task"
+                    ></box-icon>
+                  </div>
+                </div>
+                <div className="movie-data" style={{}}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      flexDirection: "column",
+                      width: "100%",
+                    }}
+                  >
+                    <h1 id="disable-title">{secondItem.title}</h1>
+                    {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
+                    <p id="overview">{secondItem.overview}</p>
+                  </div>
+                  <div style={{ width: "100%" }}>
+                    <h2 style={{ display: "flex" }}>Casts</h2>
+                    <div className="cast"
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "600px",
+                        marginTop: "-50px",
+                      }}
+                    >
+                      <Carousel item={secondItem} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <Video item={item} />
+            </div>
+          ) : (
+            <div className="menu">
+              <div style={{ marginTop: "150px" }} className="menu-loader">
+                <Loader />
+              </div>
+            </div>
+          )}
+        </>
+      )}
+    </>
+  );
+};
