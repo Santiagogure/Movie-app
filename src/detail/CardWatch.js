@@ -39,8 +39,17 @@ export const CardWatch = ({ movie }) => {
 
       <div class="movie-info">
       <div className="movie-title">
-          <h3>{movie.name}</h3>
-          <h3>{movie.title} </h3>
+      {movie.name ? (
+              movie.name.length > 20 ? (
+                <h3>{movie.name.slice(0, 20)}...</h3>
+              ) : (
+                <h3>{movie.name}</h3>
+              )
+            ) : movie.title.length > 20 ? (
+              <h3>{movie.title.slice(0, 20)}...</h3>
+            ) : (
+              <h3>{movie.title}</h3>
+            )}
           </div>
         {movie.vote_average >= 7 ? (
           <span className={movie.vote_average} style={{ color: "green" }}>

@@ -12,6 +12,8 @@ export const ViewMovie = ({ id }) => {
   const value = useContext(AppContext);
   const movies = value.movies;
   const content = value.content;
+  const show = value.show
+  const setShow = value.setShow
   const addToFavorites = value.addToFavorites;
   const addToWatchlist = value.addToWatchlist;
   const moviesContentAddToFavorites = value.moviesContentAddToFavorites;
@@ -39,6 +41,12 @@ export const ViewMovie = ({ id }) => {
     });
   }, [params]);
 
+
+  useEffect(() => {
+    setShow(true)
+
+  }, []);
+
   window.scroll(0, 0);
 
 
@@ -52,10 +60,11 @@ export const ViewMovie = ({ id }) => {
       {secondItem.length <= 0 ? (
         <>
           {active ? (
-            <div className="view-movie-container">
+            <div  className="view-movie-container">
               <div className="movie-information">
+              
+              <h1 id="display-title">{item.title} </h1>
 
-              <h1 id="display-title">{item.title}</h1>
                 <div className="movie-img">
                   <img src={IMG_URL + item.poster_path} alt={item.title}></img>
                   <div className="add-to">
@@ -99,7 +108,7 @@ export const ViewMovie = ({ id }) => {
             </div>
           ) : (
             <div className="menu">
-            <div style={{ marginTop: "150px", marginLeft: '50%' }} className="menu-loader">
+            <div style={{ marginTop: "150px" }} className="menu-loader" id="menu-loader-movies">
               <Loader />
             </div>
           </div> 
@@ -111,6 +120,7 @@ export const ViewMovie = ({ id }) => {
             <div className="view-movie-container">
               <div className="movie-information">
               <h1 id="display-title">{secondItem.title}</h1>
+            
                 <div className="movie-img">
                   <img
                     src={IMG_URL + secondItem.poster_path}

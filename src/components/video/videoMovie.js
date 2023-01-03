@@ -27,8 +27,7 @@ export default function TransitionsModal({ item }) {
       <iframe
         title={item.title}
         src={`https://www.youtube.com/embed/${video}`}
-        frameborder="0"
-        allowfullscreen
+
         className="video"
       ></iframe>
       <button

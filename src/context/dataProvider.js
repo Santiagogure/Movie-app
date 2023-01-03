@@ -22,6 +22,7 @@ export default function DataProvider({ children }) {
   const [selectedGenre, setSelectedGenre] = useState([]);
   const genreforURL = useGen(selectedGenre);
   const [display, setDisplay] = useState(false)
+  const [show, setShow] = useState(false)
 
   const [seriesGenres, setSeriesGenres] = useState([]);
   const [seriesSelectedGenre, setSeriesSelectedGenre] = useState([]);
@@ -251,7 +252,9 @@ export default function DataProvider({ children }) {
     moviesContentAddToWatchlist,
     seriesContentAddToWatchlist,
     display,
-    setDisplay
+    setDisplay,
+    show,
+    setShow
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

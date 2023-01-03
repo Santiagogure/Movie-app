@@ -96,25 +96,14 @@ export const SearchAll = () => {
 
           {active === 1 ? (
             <div>
-              {content.length <= 1 ? (
-                <p p-search>
-                  {" "}
-                  Se encontro{" "}
-                  <span>
-                    <strong>{content.length}</strong>
-                  </span>{" "}
-                  resultado
-                </p>
-              ) : (
                 <p className="p-search">
-                  {" "}
-                  Se encontraron{" "}
                   <span>
                     <strong>{content.length}</strong>
                   </span>{" "}
-                  resultados
+                  results{" "}
+                 
+                  found
                 </p>
-              )}
 
               <div className="movies-filter">
                 {content.map((movie) => (
@@ -182,23 +171,14 @@ export const SearchAll = () => {
                 }}
               ></div>
               <div>
-                {contentSeries.length <= 1 ? (
-                  <p p-search>
-                    Se encontro{" "}
-                    <span>
-                      <strong>{contentSeries.length}</strong>
-                    </span>{" "}
-                    resultado
-                  </p>
-                ) : (
-                  <p className="p-search">
-                    Se encontraron{" "}
-                    <span>
-                      <strong>{contentSeries.length}</strong>
-                    </span>{" "}
-                    resultados
-                  </p>
-                )}
+               
+              <p className="p-search">
+                  <span>
+                    <strong>{contentSeries.length}</strong>
+                  </span>{" "}
+                  results{" "}
+                  found
+                </p>
 
                 <div className="movies-filter">
                   {contentSeries.map((movie) => (

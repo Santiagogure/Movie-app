@@ -25,7 +25,7 @@ export const CardSeries = ({ series }) => {
           }}
         >
           {series.name.length > 23 ? (
-            <h3>{series.name.slice(0, 15) + "..."}</h3>
+            <h3>{series.name.slice(0, 18) + "..."}</h3>
           ) : (
             <h3>{series.name}</h3>
           )}

@@ -13,16 +13,19 @@
     margin-top: -50px;
 }
 
+
 @media screen and (max-width: 800px) {
 
-    
 
-    header {
-        max-width: 100%;
-    }
+  #menu-loader-movies {
+    margin-left: 40%;
+  }
   
+
     .view-all-container {
-        margin-left: -10%;
+
+        position: relative;
+        left: 130px;
         max-width: 1px;
         display: flex;
         justify-content: center;
@@ -30,12 +33,12 @@
     }
 
     .movie-information {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
         align-items: center;
-        position: relative;
-        left: 200px;
+        justify-content: center;
+        align-content: center;
       }
        
       #display-title{
@@ -60,27 +63,29 @@
       }
     
       #overview-view {
+        position: relative;
         width: 280px;
         font-size: 16px;
       }
 
       .wrapper {
-        margin-left: 380px;
+          position: relative;
+          left: -200px;
+          margin-top: -40px;
+          margin-bottom: 100px;
       }
     
       .video  {
-        width: 300px;
-        height: 200px;
-        margin-top: -30px;
-        margin-bottom: 20px;
+        width: 250px;
+        height: 150px;
       }
      
       #cast-text {
-        margin-left: 120px;
+        margin-left: 140px;
       }
       
       .wrapper button {
-        display: none;
+        width: 50%;
       }
     
       .carousel-item {
@@ -88,6 +93,7 @@
       }
     
       .wrapper {
+        margin-left: 400px;
         width: 70%;
       }
       .cast {
@@ -100,7 +106,6 @@
         align-items: center;
         flex-direction: column;
         margin-top: 100px;
-        max-width: 10px;
         margin-left: 100px;
       }
 
@@ -108,8 +113,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 300px;
+        width: 280px;
         margin-top: -50px;
-        margin-left: 120px;
+        margin-left: 140px;
     }
 } 
+
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .categories h3 {
+    position: relative;
+    left: 20px;
+  }
+
+ 
+}
+

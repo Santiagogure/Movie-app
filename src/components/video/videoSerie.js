@@ -16,7 +16,7 @@ export default function TransitionsModal({ item }) {
     fetchVideo();
   });
 
-  console.log(video);
+
 
   function redirect() {
     window.location = `https://www.youtube.com/watch?v=${video}`;
@@ -27,8 +27,7 @@ export default function TransitionsModal({ item }) {
       <iframe
         title={item.title}
         src={`https://www.youtube.com/embed/${video}`}
-        frameborder="0"
-        allowfullscreen
+
         className="video"
       ></iframe>
       <button

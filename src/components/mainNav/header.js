@@ -14,6 +14,8 @@ export const Header = () => {
   const setDisplay = value.setDisplay
 
   const onSearchSubmit = value.onSearchSubmit;
+  const show = value.show
+  const setShow = value.setShow
 
   useEffect(() => {
     onSearchSubmit();
@@ -25,7 +27,6 @@ export const Header = () => {
 
   function showSearch() {
     setDisplay(!display)
-    console.log(display)
   }
 
   const changeSection = (num) => {
@@ -129,7 +130,7 @@ export const Header = () => {
           <box-icon id="search-input-logo" name="search-alt-2" />
         </form>
 
-        <box-icon onClick={() => showSearch()} id="search-input-logo-display" name='search-alt-2'></box-icon>
+        <box-icon onClick={() => showSearch()} id={show ?  "search-input-logo-display" : "disable-display" }  name='search-alt-2'></box-icon>
       </header>
       }
     </div>
