@@ -28,8 +28,8 @@ export const CardMovie = ({ movie }) => {
           }}
         >
           <h3>{movie.name}</h3>
-          {movie.title.length > 28 ? (
-            <h3>{movie.title.slice(0, 24) + "..."}</h3>
+          {movie.title.length > 23 ? (
+            <h3>{movie.title.slice(0, 15) + "..."}</h3>
           ) : (
             <h3>{movie.title}</h3>
           )}

@@ -200,6 +200,7 @@ header h3 {
   padding: 0.5rem 1rem 1rem;
 }
 
+
 .movie info h3 {
   margin-top: 0;
 }
@@ -246,6 +247,8 @@ color: lightgreen;
 .favorites {
   margin-top: 10%;
 }
+
+
 
 /* Footer */
 
@@ -393,6 +396,7 @@ align-items: center;
 }
 
 .video {
+  margin-top: 50px;
   width: 640px;
   height: 360px;
 }
@@ -482,12 +486,340 @@ align-items: center;
   fill: var(--secondary-color);
 }
 
-
 @media screen and (max-width: 1300px) {
   .movie {
     width: 150px;
     height: 300px;
   }
+
+  .movie-info {
+    position: relative;
+    font-size: 16px;
+    margin-top: -20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-title {
+    margin-top: 22px;
+    font-size: 14px;
+  }
+
+  .movie-info span {
+    position: absolute;
+    left: -2px;
+    top: 20px;
+  } 
+
+  .overview {
+    font-size: 1.2vh;
+  }
+
+}
+
+
+/*Quitamos el logo, ajustamos los generos y mantenemos el tamaño del header */
+
+@media screen and (max-width: 1000px) {
+  .logo-disable {
+    display: none;
+  }
+
+  .genres {
+    width: 420px;
+  }
+
+
+  header {
+    height: 80px;
+  }
+
+}
+
+/* Buscador y ajustamos la pelicula */
+
+@media screen and (max-width: 800px) {
+
+  #display-title {
+    width: 50%;
+  }
+
+  #display-title {
+    display: block;
+  }
+
+  #disable-title {
+    display: none;
+  }
+  .movie {
+    width: 130px;
+    height: 250px;
+  }
+
+  .movie-title {
+    font-size: 12px;
+    width: 100px;
+    position: relative;
+    margin-top: 7px;
+  }
+
+  .movie-info span {
+    position: absolute;
+    left: -2px;
+    top: -3px;
+  } 
+ 
+
+  .favorites {
+    margin-top: 15%;
+  }
+
+}
+
+
+@media screen and (max-width: 660px) {
+
+  .favorites {
+    margin-top: 20%;
+
+  }
+
+  .movie {
+    width: 110px;
+    height: 220px;
+  }
+
+  .movie-title {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width: 80px;
+  }
+
+
+  .movie-info span {
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  #form {
+    display: none;
+  }
+
+  .categories h3 {
+    font-size: 16px
+  }
+  
+  .header-text {
+    gap: 30px;
+  }
+
+  #search-input-logo-display {
+    display: block;
+    cursor: pointer;
+    fill: #eee;
+    margin-left: 120px;
+    position: relative;
+    left: -100px;
+  }
+
+  #input-search-res {
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    background-color: #eee;
+    padding: 0.5rem 8rem;
+    color: #fff;
+    font-family: inherit;
+    transition: 0.1s;
+    max-width: 50px
+} 
+  
+}
+
+@media screen and (max-width: 580px) {
+
+  
+  .favorites {
+    margin-top: 25%;
+
+  }
+  
+  .movie {
+    width: 130px;
+    height: 250px;
+  }
+
+  .movie-info {
+    position: relative;
+    font-size: 16px;
+    margin-top: -20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .movie-title {
+    margin-top: 10px;
+    font-size: 11px;
+    width: 100px;
+  }
+
+  .movie-info span {
+    display: none;
+  } 
+
+
+  .menu-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .overview {
+    display: none;
+  }
+  
+  .genres {
+    width: 300px;
+  }
+
+  .movie {
+    height: 195px;
+    width: 90px;
+  }
+
+  .movie-title {
+    font-size: 10px;
+    width: 75px;
+  }
+} 
+
+@media screen and (max-width: 450px) {
+
+
+.movie {
+  margin: 0.5rem;
+}
+
+  
+#search-input-logo-display {
+  position: absolute;
+  right: 0;
+  left: -80px;
+  font-size: 10px;
+}
+
+
+
+.categories h3 {
+  font-size: 15px;
+  position: relative;
+  left: -60px;
+  margin-left: -20px;
+}
+   
+}
+
+
+
+@media screen and (max-width: 390px) {
+
+  .favorites {
+    margin-top: 30%;
+  }
+
+
+  .movie {
+    height: 180px;
+    width: 80px;
+  }
+ 
+  .movie-title {
+    font-size: 9px;
+    width: 70px;
+  }
+
+  #search-input-logo-display {
+    position: absolute;
+    right: 0;
+    left: -100px;
+    font-size: 10px;
+  }
+  
+
+  .categories h3 {
+    font-size: 12px;
+    position: relative;
+    left: -80px;
+    margin-left: -12px;
+  }
+  
+}
+
+@media screen and (max-width: 350px) {
+  
+  .categories h3 {
+    font-size: 12px;
+    position: relative;
+    left: -50px;
+    margin-left: -15px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 300px) {
+
+  .favorites {
+    margin-top: 35%;
+  }
+  
+  .genres {
+    width: 280px;
+  }
+
+  .movie {
+    height: 130px;
+    width: 65px;
+  }
+
+  .movie-title {
+    margin-top: -5px;
+    font-size: 8px;
+    width: 50px;
+  }
+
+  .pagination {
+    font-size: 10px;
+    width: 170px;
+  }
+
+  .categories h3 {
+    font-size: 12px;
+    margin-left: -20px;
+    position: relative;
+    left: -40px;
+  }
+
+}
+
+/* 
+@media screen and (max-width: 1300px) {
+  .movie {
+    width: 150px;
+    height: 300px;
+  }
+
+
+  
 
 
   .movie-info {
@@ -640,7 +972,9 @@ align-items: center;
 
 @media screen and (max-width: 680px) {
 
- 
+  .favorites {
+    margin-top: 20%;
+  }
 
   header {
     justify-content: center;
@@ -651,7 +985,7 @@ align-items: center;
   }
 
   .categories h3 {
-    font-size: 12px
+    font-size: 16px
   }
   
   .header-text {
@@ -824,9 +1158,20 @@ align-items: center;
 }
 
 @media screen and (max-width: 450px) {
+
+
+ 
+
+  .favorites {
+    margin-top: 25%;
+  }
+
+  .favorites h1 {
+    font-size: 25px;
+  }
   
   header {
-    max-width: 400px;
+    max-width: 500px;
   }
 
   .view-all-container {
@@ -844,6 +1189,10 @@ align-items: center;
     gap: 15px
   }
 
+  header h3 {
+    font-size: 1px;
+  }
+
   .menu {
     margin-left: -20px;
   }
@@ -852,8 +1201,8 @@ align-items: center;
     width: 80%;
   }
   .movie {
-    width: 80px;
-    height: 160px;
+    width: 72px;
+    height: 150px;
   }
 
   .movie-title {
@@ -911,7 +1260,9 @@ align-items: center;
 
 @media screen and (max-width: 350px)  {
 
-
+  .favorites {
+    margin-top: 33%;
+  }
 
   .movie {
     width: 70px;
@@ -923,4 +1274,4 @@ align-items: center;
     font-size: 7px;
      width: 50px;
   }
-}
+} */

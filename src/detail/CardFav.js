@@ -9,7 +9,7 @@ export const CardFav = ({ movie }) => {
 
   return (
     <>
-      <div className="movie">
+      <div id="movie-fav" className="movie">
         <box-icon
           id="delete-icon"
           onClick={() => deleteOfFavorites(movie.id)}
@@ -41,8 +41,8 @@ export const CardFav = ({ movie }) => {
 
         <div class="movie-info">
           <div className="movie-title">
-          <h3>{movie.name}</h3>
-          <h3>{movie.title} </h3>
+          <h3 style={{marginTop: '-15px'}}>{movie.name}</h3>
+          <h3 style={{marginTop: '-10px'}}>{movie.title} </h3>
           </div>
           {movie.vote_average >= 7 ? (
             <span className={movie.vote_average} style={{ color: "green" }}>

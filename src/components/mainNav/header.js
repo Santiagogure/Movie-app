@@ -61,7 +61,8 @@ export const Header = () => {
               justifyContent: "space-between",
               alignItems: "center",
               gap: "50px",
-            }}
+            }} 
+            className="text-header-container"
           >
             <Link
               onClick={() => changeSection(1)}

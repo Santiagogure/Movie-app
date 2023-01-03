@@ -12,7 +12,7 @@ const CustomPagination = ({ totalPages, setPages }) => {
   return (
     <div
       className="pagination"
-      style={{ display: "flex", justifyContent: "center", marginTop: "50px", marginBottom: '60px'}}
+      style={{ display: "flex", justifyContent: "center", marginTop: "50px", marginBottom: '60px', }}
     >
       <Pagination
         onChange={(e) => handleChangePage(e.target.textContent)}

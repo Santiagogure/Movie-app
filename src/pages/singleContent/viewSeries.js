@@ -79,7 +79,7 @@ export const ViewSeries = () => {
                   >
                     <h1 id="disable-title">{item.name}</h1>
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
-                    <p id="overview">{item.overview}</p>
+                    <p id="overview-view">{item.overview}</p>
                   </div>
                   <div style={{ width: "100%" }}>
                     <h2 id="cast-text" style={{ display: "flex" }}>Casts</h2>
@@ -145,7 +145,7 @@ export const ViewSeries = () => {
                   >
                   <h1 id="disable-title">{secondItem.name}</h1>
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
-                    <p id="overview">{secondItem.overview}</p>
+                    <p id="overview-view">{secondItem.overview}</p>
                   </div>
                   <div style={{ width: "100%" }}>
                     <h2 style={{ display: "flex" }}>Casts</h2>

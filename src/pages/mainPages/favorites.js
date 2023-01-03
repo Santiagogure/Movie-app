@@ -10,8 +10,8 @@ export const Favorites = () => {
 
   return (
     <div className="favorites">
-      <h1 style={{ color: "white", letterSpacing: "0.5px" }}>
-        Favorite Movies or Series
+      <h1 id="favorite-text" style={{ color: "white", letterSpacing: "0.5px" }}>
+        Favorites
       </h1>
       <div className="favorite-movies">
         {favoriteMovies.length <= 0 ? (

@@ -24,8 +24,8 @@ export const CardSeries = ({ series }) => {
             alignItems: "center",
           }}
         >
-          {series.name.length > 21 ? (
-            <h3>{series.name.slice(0, 18) + "..."}</h3>
+          {series.name.length > 23 ? (
+            <h3>{series.name.slice(0, 15) + "..."}</h3>
           ) : (
             <h3>{series.name}</h3>
           )}

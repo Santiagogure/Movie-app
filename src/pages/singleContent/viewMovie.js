@@ -5,6 +5,8 @@ import { AppContext } from "../../context/dataProvider";
 import { Loader } from "../../loader/loader";
 import Video from "../../componentes/video/videoMovie";
 import "../../componentes/carousel/carousel.css";
+import './singleContent.css'
+
 
 export const ViewMovie = ({ id }) => {
   const value = useContext(AppContext);
@@ -83,19 +85,12 @@ export const ViewMovie = ({ id }) => {
                   >
                     <h1 id="disable-title">{item.title}</h1>
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
-                    <p id="overview">{item.overview}</p>
+                    <p id="overview-view">{item.overview}</p>
                   </div>
-                  <div style={{ width: "100%", marginTop: '20px' }}>
-                    <div className="cast"
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        width: "600px",
-                        marginTop: "-50px",
-                      }}
-                    >
-                      <Carousel  item={item} />
+                  <h3 id="cast-text">Cast</h3>
+                  <div style={{ width: "31%", marginTop: '20px' }}>
+                    <div className="cast">
+                      <Carousel item={item} />
                     </div>
                   </div>
                 </div>
@@ -104,10 +99,10 @@ export const ViewMovie = ({ id }) => {
             </div>
           ) : (
             <div className="menu">
-              <div style={{ marginTop: "150px" }} className="menu-loader">
-                <Loader />
-              </div>
+            <div style={{ marginTop: "150px", marginLeft: '50%' }} className="menu-loader">
+              <Loader />
             </div>
+          </div> 
           )}
         </>
       ) : (
@@ -148,7 +143,7 @@ export const ViewMovie = ({ id }) => {
                   >
                     <h1 id="disable-title">{secondItem.title}</h1>
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
-                    <p id="overview">{secondItem.overview}</p>
+                    <p id="overview-view">{secondItem.overview}</p>
                   </div>
                   <div style={{ width: "100%" }}>
                     <h2 style={{ display: "flex" }}>Casts</h2>

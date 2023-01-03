@@ -70,8 +70,8 @@ export const TvSeries = () => {
             <CardSeries key={series.id} series={series} />
           ))}
         </div>
+        <CustomPagination setPages={setPages} totalPages={seriesTotalPages} />
       </div>
-      <CustomPagination setPages={setPages} totalPages={seriesTotalPages} />
     </>
   );
 };
