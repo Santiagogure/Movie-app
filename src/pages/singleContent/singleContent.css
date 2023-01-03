@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+   
 }
 
 .cast {
@@ -30,6 +30,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: 20%;
     }
 
     .movie-information {
@@ -117,6 +118,8 @@
         margin-top: -50px;
         margin-left: 140px;
     }
+
+    
 } 
 
 @media screen and (max-width: 600px) {

@@ -103,9 +103,7 @@ export const ViewSeries = () => {
             </div>
           ) : (
             <div className="menu">
-            <div style={{ marginTop: "150px", marginLeft: '50%' }} className="menu-loader">
-              <Loader />
-            </div>
+            
           </div> 
           )}
         </>
@@ -169,9 +167,7 @@ export const ViewSeries = () => {
             </div>
           ) : (
             <div className="menu">
-              <div style={{ marginTop: "150px" }} className="menu-loader">
-                <Loader />
-              </div>
+             
             </div>
           )}
         </>

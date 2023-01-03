@@ -108,9 +108,7 @@ export const ViewMovie = ({ id }) => {
             </div>
           ) : (
             <div className="menu">
-            <div style={{ marginTop: "150px" }} className="menu-loader" id="menu-loader-movies">
-              <Loader />
-            </div>
+            
           </div> 
           )}
         </>
@@ -175,9 +173,7 @@ export const ViewMovie = ({ id }) => {
             </div>
           ) : (
             <div className="menu">
-              <div style={{ marginTop: "150px" }} className="menu-loader">
-                <Loader />
-              </div>
+            
             </div>
           )}
         </>

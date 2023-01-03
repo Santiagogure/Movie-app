@@ -659,7 +659,6 @@ align-items: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-left: -5%;
   background-color: var(--secondary-color);  
   z-index: 3;
   max-width: 100%;
@@ -678,7 +677,7 @@ align-items: center;
   width: 50px;
   position: relative;
   top: -50px;
-  margin-left: -10px;
+
 } 
 
 
@@ -688,7 +687,7 @@ outline: none;
 background-color: #eee;
 color: black;
 text-align: left;
-width: 100px;
+width: 50px;
 margin-left: -20px;
 }
 
