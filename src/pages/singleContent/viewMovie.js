@@ -16,6 +16,7 @@ export const ViewMovie = ({ id }) => {
   const setShow = value.setShow
   const addToFavorites = value.addToFavorites;
   const addToWatchlist = value.addToWatchlist;
+  const changeSection = value.changeSection
   const moviesContentAddToFavorites = value.moviesContentAddToFavorites;
   const moviesContentAddToWatchlist = value.moviesContentAddToWatchlist;
   const params = useParams();
@@ -44,7 +45,7 @@ export const ViewMovie = ({ id }) => {
 
   useEffect(() => {
     setShow(true)
-
+   
   }, []);
 
   window.scroll(0, 0);
@@ -56,7 +57,8 @@ export const ViewMovie = ({ id }) => {
   }, 1000);
 
   return (
-    <div className="view-all-container">
+   
+    <div style={{ width: '100%' }} className="view-all-container" >
       {secondItem.length <= 0 ? (
         <>
           {active ? (
@@ -108,8 +110,10 @@ export const ViewMovie = ({ id }) => {
             </div>
           ) : (
             <div className="menu">
-            
-          </div> 
+              <div style={{ marginTop: "150px" }} className="menu-loader">
+                <Loader />
+              </div>
+            </div> 
           )}
         </>
       ) : (
@@ -153,8 +157,8 @@ export const ViewMovie = ({ id }) => {
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
                     <p id="overview-view">{secondItem.overview}</p>
                   </div>
+                  <h3 id="cast-text">Cast</h3>
                   <div style={{ width: "100%" }}>
-                    <h2 style={{ display: "flex" }}>Casts</h2>
                     <div className="cast"
                       style={{
                         display: "flex",
@@ -173,11 +177,14 @@ export const ViewMovie = ({ id }) => {
             </div>
           ) : (
             <div className="menu">
-            
+            <div style={{ marginTop: "150px" }} className="menu-loader">
+              <Loader />
             </div>
+          </div> 
           )}
         </>
       )}
     </div>
+
   );
 };

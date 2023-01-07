@@ -1,8 +1,9 @@
+
+
 .view-all-container {
     display: flex;
     justify-content: center;
     align-items: center;
-   
 }
 
 .cast {
@@ -16,21 +17,11 @@
 
 @media screen and (max-width: 800px) {
 
-
-  #menu-loader-movies {
-    margin-left: 40%;
-  }
   
-
     .view-all-container {
-
-        position: relative;
-        left: 130px;
-        max-width: 1px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 20%;
+      width: 100%;
+      margin: auto;
+      position: relative;
     }
 
     .movie-information {
@@ -40,6 +31,7 @@
         align-items: center;
         justify-content: center;
         align-content: center;
+
       }
        
       #display-title{
@@ -65,8 +57,9 @@
     
       #overview-view {
         position: relative;
-        width: 280px;
-        font-size: 16px;
+
+        width: 210px;
+        font-size: 13px;
       }
 
       .wrapper {
@@ -107,7 +100,6 @@
         align-items: center;
         flex-direction: column;
         margin-top: 100px;
-        margin-left: 100px;
       }
 
       .cast {
@@ -119,13 +111,21 @@
         margin-left: 140px;
     }
 
-    
+    .menu-loader {
+      display: none;
+    }
 } 
 
 @media screen and (max-width: 600px) {
+
+  .parent {
+    max-width: 1px;
+  }
+
   header {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
   }
 
   .categories h3 {

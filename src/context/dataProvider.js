@@ -23,6 +23,7 @@ export default function DataProvider({ children }) {
   const genreforURL = useGen(selectedGenre);
   const [display, setDisplay] = useState(false)
   const [show, setShow] = useState(false)
+  const [active, setActive] = useState(1);
 
   const [seriesGenres, setSeriesGenres] = useState([]);
   const [seriesSelectedGenre, setSeriesSelectedGenre] = useState([]);
@@ -50,6 +51,13 @@ export default function DataProvider({ children }) {
       state: valueSearch,
     });
     onResetForm();
+  };
+
+  const changeSection = (num) => {
+    setSelectedGenre([]);
+    setActive(num);
+    setPages(1);
+    window.scroll(0, 0);
   };
 
   // Conseguimos las peliculas o series
@@ -254,7 +262,8 @@ export default function DataProvider({ children }) {
     display,
     setDisplay,
     show,
-    setShow
+    setShow,
+    changeSection
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

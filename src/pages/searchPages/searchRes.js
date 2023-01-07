@@ -14,7 +14,7 @@ export const SearchRes = () => {
   }
 
   return (
-    <div >
+    <div>
       <div className="search-res-container">
         <div className="form-container">
           <box-icon

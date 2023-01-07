@@ -103,7 +103,9 @@ export const ViewSeries = () => {
             </div>
           ) : (
             <div className="menu">
-            
+            <div style={{ marginTop: "150px" }} className="menu-loader">
+              <Loader />
+            </div>
           </div> 
           )}
         </>
@@ -147,8 +149,8 @@ export const ViewSeries = () => {
                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
                     <p id="overview-view">{secondItem.overview}</p>
                   </div>
+                  <h3 id="cast-text">Cast</h3>
                   <div style={{ width: "100%" }}>
-                    <h2 style={{ display: "flex" }}>Casts</h2>
                     <div className="cast"
                       style={{
                         display: "flex",
@@ -167,8 +169,10 @@ export const ViewSeries = () => {
             </div>
           ) : (
             <div className="menu">
-             
+            <div style={{ marginTop: "150px" }} className="menu-loader">
+              <Loader />
             </div>
+          </div> 
           )}
         </>
       )}
@@ -177,138 +181,4 @@ export const ViewSeries = () => {
 };
 
 
-//   return (
-//     <>
-//       {secondItem.length <= 0 ? (
-//         <>
-//           {active ? (
-//             <div className="view-movie-container">
-//               <div className="movie-information">
-//               <h1 id="display-title">{item.name}</h1>
-//                 <div className="movie-img">
-//                   <img src={IMG_URL + item.poster_path} alt={item.name}></img>
-//                   <div className="add-to">
-//                     <box-icon
-//                       id="add-favorites"
-//                       onClick={() => seriesAddToFavorites(item.id)}
-//                       type="solid"
-//                       name="heart"
-//                     ></box-icon>
-//                     <box-icon
-//                       id="add-watchlist"
-//                       onClick={() => seriesAddToWatchlist(item.id)}
-//                       name="task"
-//                     ></box-icon>
-//                   </div>
-//                 </div>
-//                 <div className="movie-data" style={{}}>
-//                   <div
-//                     style={{
-//                       display: "flex",
-//                       alignItems: "center",
-//                       justifyContent: "center",
-//                       gap: "10px",
-//                       flexDirection: "column",
-//                       width: "100%",
-//                     }}
-//                   >
-//                     <h1 id="disable-title">{item.name}</h1>
-//                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
-//                     <p id="overview-view">{item.overview}</p>
-//                   </div>
-//                   <div style={{ width: "100%" }}>
-//                     <h2 id="cast-text" style={{ display: "flex" }}>Casts</h2>
-//                     <div className="cast"
-//                       style={{
-//                         display: "flex",
-//                         justifyContent: "center",
-//                         alignItems: "center",
-//                         width: "600px",
-//                         marginTop: "-50px",
-//                       }}
-//                     >
-//                       <SeriesCarousel item={item} />
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//               <Video item={item} />
-//             </div>
-//           ) : (
-//             <div className="menu">
-//               <div style={{ marginTop: "150px" }} className="menu-loader">
-//                 <Loader />
-//               </div>
-//             </div>
-//           )}
-//         </>
-//       ) : (
-//         <>
-//           {active ? (
-//             <div className="view-movie-container">
-//               <div className="movie-information">
-//               <h1 id="display-title">{secondItem.name}</h1>
-//                 <div className="movie-img">
-//                   <img
-//                     src={IMG_URL + secondItem.poster_path}
-//                     alt={secondItem.name}
-//                   ></img>
-//                   <div className="add-to">
-//                     <box-icon
-//                       id="add-favorites"
-//                       onClick={() => seriesContentAddToFavorites(secondItem.id)}
-//                       type="solid"
-//                       name="heart"
-//                     ></box-icon>
-//                     <box-icon
-//                       id="add-watchlist"
-//                       onClick={() => seriesContentAddToWatchlist(secondItem.id)}
-//                       name="task"
-//                     ></box-icon>
-//                   </div>
-//                 </div>
-//                 <div className="movie-data" style={{}}>
-//                   <div
-//                     style={{
-//                       display: "flex",
-//                       alignItems: "center",
-//                       justifyContent: "center",
-//                       gap: "10px",
-//                       flexDirection: "column",
-//                       width: "100%",
-//                     }}
-//                   >
-//                   <h1 id="disable-title">{secondItem.name}</h1>
-//                     {/* <h5 style={{marginTop: '30px', opacity: '0.7'}}>({item.release_date.slice(0, 4)})</h5> */}
-//                     <p id="overview-view">{secondItem.overview}</p>
-//                   </div>
-//                   <div style={{ width: "100%" }}>
-//                     <h2 style={{ display: "flex" }}>Casts</h2>
-//                     <div className="cast"
-//                       style={{
-//                         display: "flex",
-//                         justifyContent: "center",
-//                         alignItems: "center",
-//                         width: "600px",
-//                         marginTop: "-50px",
-//                       }}
-//                     >
-//                       <SeriesCarousel item={secondItem} />
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-//               <Video item={item} />
-//             </div>
-//           ) : (
-//             <div className="menu">
-//               <div style={{ marginTop: "150px" }} className="menu-loader">
-//                 <Loader />
-//               </div>
-//             </div>
-//           )}
-//         </>
-//       )}
-//     </>
-//   );
-// };
+

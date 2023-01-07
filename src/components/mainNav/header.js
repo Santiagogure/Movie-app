@@ -12,6 +12,7 @@ export const Header = () => {
   const setSelectedGenre = value.setSelectedGenre;
   const display = value.display
   const setDisplay = value.setDisplay
+  const changeSection = value.changeSection
 
   const onSearchSubmit = value.onSearchSubmit;
   const show = value.show
@@ -29,12 +30,7 @@ export const Header = () => {
     setDisplay(!display)
   }
 
-  const changeSection = (num) => {
-    setSelectedGenre([]);
-    setActive(num);
-    setPages(1);
-    window.scroll(0, 0);
-  };
+
 
   return (
     <div>
