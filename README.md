@@ -10,7 +10,6 @@
 
 ### Built with
 
-- Semantic HTML5 markup
 - Tailwind CSS
 - Typescript
 - [React](https://reactjs.org/) - JS library
