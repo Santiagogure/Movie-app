@@ -12,7 +12,7 @@
 
 - Tailwind CSS
 - Typescript
-- [React](https://reactjs.org/) - JS library
+- React JS
 - Node JS
 - Express
 - Postgres SQL
