@@ -8,7 +8,7 @@ export const SearchBar = () => {
 
   const defaultKeyword = useRef('')
 
-  const { recentSearch, setRecentSearch } = useContext(AppContext)
+  const { recentSearch } = useContext(AppContext)
 
   const [keyword, setKeyword] = useState('')
   const [isSearchFocus, setSearchFocus] = useState(false)

@@ -11,7 +11,6 @@ const secretKey = crypto.randomBytes(32).toString('hex')
 require('dotenv').config({ path: '../.env' })
 
 const app = express()
-
 app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
 
@@ -38,6 +37,7 @@ app.use(
 app.use(bodyParser.json())
 app.use(cors())
 
+/* Login */
 app.post('/login', (req, res) => {
   const { username, password } = req.body
 
@@ -60,7 +60,7 @@ app.post('/login', (req, res) => {
   )
 })
 
-// Ruta para registrar un nuevo usuario
+// SignUp
 app.post('/signup', (req, res) => {
   const { username, password } = req.body
 
@@ -91,6 +91,7 @@ app.post('/signup', (req, res) => {
   )
 })
 
+//Post Image (Does not work yet)
 app.post('/users/:username/image', async (req, res) => {
   const { username } = req.params
   const { image } = req.body
@@ -125,6 +126,7 @@ app.post('/users/:username/image', async (req, res) => {
   }
 })
 
+/* Update your username */
 app.put('/users/:username/username', (req, res) => {
   const { username } = req.params
   const newUsername = req.body.username
@@ -146,8 +148,7 @@ app.put('/users/:username/username', (req, res) => {
   )
 })
 
-/* Favorite Movies */
-
+/* Add Favorite Movies */
 app.post('/users/:username/favorites', async (req, res) => {
   try {
     const { username } = req.params
@@ -175,6 +176,7 @@ app.post('/users/:username/favorites', async (req, res) => {
   }
 })
 
+/* Delete Favorite Movie */
 app.delete('/users/:username/favorites/:movie_id', async (req, res) => {
   try {
     const { username, movie_id } = req.params
@@ -202,6 +204,7 @@ app.delete('/users/:username/favorites/:movie_id', async (req, res) => {
   }
 })
 
+/* Get favoirte Movies*/
 app.get('/users/:username/favorites', async (req, res) => {
   try {
     const { username } = req.params
@@ -218,7 +221,7 @@ app.get('/users/:username/favorites', async (req, res) => {
   }
 })
 
-/* Watchlist Movies */
+/* Add Watchlist Movies */
 app.post('/users/:username/watchlist', async (req, res) => {
   try {
     const { username } = req.params
@@ -248,6 +251,7 @@ app.post('/users/:username/watchlist', async (req, res) => {
   }
 })
 
+/* Get watchlist moviess*/
 app.get('/users/:username/watchlist', async (req, res) => {
   try {
     const { username } = req.params
@@ -291,6 +295,7 @@ app.delete('/users/:username/watchlist/:movie_id', async (req, res) => {
   }
 })
 
+/* Listen */
 app.listen(port, () => {
   console.log(`Servidor iniciado en el puerto ${port}`)
 })

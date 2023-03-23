@@ -36,7 +36,7 @@ export const Categories = ({
 
   const handleDeleteWatchlist = async (id) => {
     try {
-      const response = await axios.delete(
+      await axios.delete(
         `http://localhost:4000/users/${userName}/watchlist/${id}`,
         {
           username: userName,
@@ -46,11 +46,8 @@ export const Categories = ({
           userWatchlist.filter((userWatch) => userWatch.movie_id !== id)
         )
       )
-      console.log(response)
       getWatchlist()
-    } catch (error) {
-      console.log(error)
-    }
+    } catch (error) {}
   }
 
   return (

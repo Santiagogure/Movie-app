@@ -6,57 +6,53 @@ interface Props extends CustomComponentProps {
   title?: string
   filter?: any
   onTitleClick?: () => void
-  filterByMediaType?: Function
+  filterByMediaType?: (mediaType: string) => void
   hidden?: boolean
   showFilter?: boolean
 }
 
-export const Section = (props: Props) => {
-  if (props.hidden) return <></>
-  if (props.hidden) return <></>
+export const Section = ({
+  className,
+  title,
+  filter,
+  onTitleClick,
+  filterByMediaType,
+  hidden = false,
+  showFilter = false,
+  children,
+}: Props) => {
+  if (hidden) {
+    return null
+  }
+
+  const handleFilterByMediaType = (mediaType: string) => {
+    if (filterByMediaType) {
+      filterByMediaType(mediaType)
+    }
+  }
 
   return (
-    <Container className={props.className}>
-      {props.title ? (
+    <Container className={className}>
+      {title && (
         <h1
-          onClick={props.onTitleClick}
+          onClick={onTitleClick}
           className={mergeClassName(
             'max-w-[80%] text-xl lg:text-xl ',
-            props.onTitleClick ? 'cursor-pointer hover:text-primary' : ''
+            onTitleClick ? 'cursor-pointer hover:text-primary' : ''
           )}
-          dangerouslySetInnerHTML={{
-            __html: props.title,
-          }}
-        ></h1>
-      ) : (
-        ''
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       )}
 
-      {props.children}
+      {children}
 
-      {props.showFilter && props.filterByMediaType && props.filter ? (
-        <div
-          className={`flex items-center justify-center text-2xl space-x-5 
-      
-        `}
-        >
-          <button
-            onClick={() =>
-              props.filterByMediaType ? props.filterByMediaType('tv') : ''
-            }
-          >
-            TV
-          </button>
-          <button
-            onClick={() =>
-              props.filterByMediaType ? props.filterByMediaType('movie') : ''
-            }
-          >
+      {showFilter && filterByMediaType && filter && (
+        <div className="flex items-center justify-center text-2xl space-x-5">
+          <button onClick={() => handleFilterByMediaType('tv')}>TV</button>
+          <button onClick={() => handleFilterByMediaType('movie')}>
             Movies
           </button>
         </div>
-      ) : (
-        ''
       )}
     </Container>
   )

@@ -16,51 +16,39 @@ const Account = () => {
   } = useContext(AppContext)
   const [activeTab, setActiveTab] = useState('favorite')
   const [newUser, setNewUser] = useState('')
-
   const [edit, setEdit] = useState(false)
 
   const handleUpdateUsername = async () => {
-    if (newUser.length >= 2) {
-      try {
-        const response = await axios.put(
-          `http://localhost:4000/users/${userName}/username`,
-          {
-            username: newUser,
-          }
-        )
-        localStorage.setItem('username', newUser)
-        console.log(response)
-        setUserName(newUser)
-      } catch (error) {}
+    try {
+      await axios.put(`http://localhost:4000/users/${userName}/username`, {
+        username: newUser,
+      })
+      localStorage.setItem('username', newUser)
+      setUserName(newUser)
+    } catch (error) {
+      console.error(error)
     }
   }
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0]
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onloadend = () => {
-      setImageUrl(reader.result)
-    }
-    axios
-      .post(`http://localhost:4000/users/${userName}/image`, {
+  const handleImageUpload = async (event) => {
+    try {
+      const file = event.target.files[0]
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onloadend = () => {
+        setImageUrl(reader.result)
+      }
+      await axios.post(`http://localhost:4000/users/${userName}/image`, {
         image: imageUrl,
       })
-      .then((response) => {
-        console.log(response.data)
-      })
-      .catch((error) => {
-        console.error('Error:' + error)
-      })
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => {
     setMenuIsVisible(false)
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' })
   }, [])
 
   useEffect(() => {

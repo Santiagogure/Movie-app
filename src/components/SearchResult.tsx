@@ -12,28 +12,27 @@ interface Props {
   goToSearchPage: Function
 }
 
-export const SearchResult = (props: Props) => {
+export const SearchResult = ({ keyword }: Props) => {
   const [items, setItems] = useState<Film[]>([])
-
-  const searchTimeout = useRef<any>('')
-
   const globalContext = useGlobalContext()
-
   const navigate = useNavigate()
 
-  const fetch = async () => {
-    if (!props.keyword) return
-
-    clearTimeout(searchTimeout.current)
-    searchTimeout.current = setTimeout(async () => {
-      const res = await search(props.keyword)
-      setItems(res.films)
-    }, 120)
-  }
+  const searchTimeout = useRef<NodeJS.Timeout>()
 
   useEffect(() => {
+    const fetch = async () => {
+      if (!keyword) return
+
+      clearTimeout(searchTimeout.current)
+
+      searchTimeout.current = setTimeout(async () => {
+        const res = await search(keyword)
+        setItems(res.films)
+      }, 120)
+    }
+
     fetch()
-  }, [props.keyword])
+  }, [keyword])
 
   return (
     <div

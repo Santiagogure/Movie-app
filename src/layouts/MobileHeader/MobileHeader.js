@@ -1,12 +1,10 @@
-import React, { useState, useContext, useRef } from 'react'
-import { IoIosSearch } from 'react-icons/io'
+import React, { useContext } from 'react'
 import { AppContext } from '../../context/dataProvider'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { SearchBar } from '../../components/Common/SearchBar'
 
 const MobileHeader = () => {
-  const { menuIsVisible, setMenuIsVisible, recentSearch, setRecentSearch } =
-    useContext(AppContext)
+  const { setMenuIsVisible } = useContext(AppContext)
 
   return (
     <>

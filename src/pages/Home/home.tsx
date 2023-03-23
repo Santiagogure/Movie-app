@@ -15,7 +15,6 @@ import { TrailerModal } from '../../components/Common/Trailer'
 import { TrendingHero } from '../../components/TrendingHero'
 import { Film } from '../../interfaces'
 import { mergeFilms, tmdbImageSrc } from '../../utils'
-import { Loading } from '../../components/Common/Loading'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -83,7 +82,7 @@ export const Home = () => {
         onHide={() => setTrailerSrc('')}
         src={trailerSrc}
       ></TrailerModal>
-      {/* trendings */}
+
       <Section className="py-0" hidden={trendings.length === 0}>
         <Slider
           className="slick-hero  max-w-screen mx-auto"

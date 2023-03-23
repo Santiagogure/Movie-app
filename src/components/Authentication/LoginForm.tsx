@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Bars } from 'react-loader-spinner'
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
 import { AppContext } from '../../context/dataProvider'
 
 export const LoginForm = () => {

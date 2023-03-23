@@ -1,17 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useCallback, useContext } from 'react'
 import { AppContext } from '../../context/dataProvider'
 
 import { SearchBar } from '../../components/Common/SearchBar'
 import { Link, useNavigate } from 'react-router-dom'
 
-const LoginMobileHeader = () => {
-  const navigate = useNavigate()
+const LoginMobileHeader = React.memo(() => {
   const { setMenuIsVisible, setIsLogin, userName } = useContext(AppContext)
 
-  const handleLogOut = () => {
+  const handleLogOut = useCallback(() => {
     localStorage.clear()
     setIsLogin(false)
-  }
+  }, [setIsLogin])
 
   return (
     <>
@@ -61,6 +60,5 @@ const LoginMobileHeader = () => {
       </div>
     </>
   )
-}
-
+})
 export default LoginMobileHeader
