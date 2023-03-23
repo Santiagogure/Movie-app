@@ -2,4 +2,4 @@ This is a movie web application that displays detailed information about all mov
 
 The technologies used for the production of this application were some such as Tailwind CSS, TypeScript, React, Node and Express. To store the movies and series information, a PostgreSQL database is used.
 
-Translated with www.DeepL.com/Translator (free version)
+
