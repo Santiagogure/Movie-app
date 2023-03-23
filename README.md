@@ -20,8 +20,8 @@
 
 ### 💻 My Networks
 
-- Portfolio - ('')
-- LinkedIn - [@dannxvc](https://www.linkedin.com/in/santiago-gurevich/)
+- Portfolio - [@Santiago-Gurevich]('')
+- LinkedIn - [@Santiago-Gurevich](https://www.linkedin.com/in/santiago-gurevich/)
 
 
 
