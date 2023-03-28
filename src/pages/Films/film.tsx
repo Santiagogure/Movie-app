@@ -91,19 +91,22 @@ export const Film = (props: Props) => {
   const addFavoriteMovie = () => {
     if (isLogin) {
       if (
-        userFavorites.some((favorite: any) => favorite.movie_id == movie_id)
+        userFavorites?.some((favorite: any) => favorite.movie_id == movie_id)
       ) {
         setAddedFav(true)
       }
       axios
-        .post(`http://localhost:4000/users/${userName}/favorites`, {
-          movie_id,
-          name,
-          type,
-        })
+        .post(
+          `http://localhost:4000/${userName}/favorites/${userName}/favorites`,
+          {
+            movie_id,
+            name,
+            type,
+          }
+        )
         .then((response) => {
           console.log(response.data) // Pelicula agregada a la lista de favoritos
-          setUserFavorites([...userFavorites, film])
+          setUserFavorites([...(userFavorites || []), film])
         })
         .catch((error) => {
           console.error(error)
@@ -113,16 +116,19 @@ export const Film = (props: Props) => {
 
   const addWatchlistMovie = () => {
     if (
-      userWatchlist.some((watchlist: any) => watchlist.movie_id == movie_id)
+      userWatchlist?.some((watchlist: any) => watchlist.movie_id == movie_id)
     ) {
       setAddedWatch(true)
     }
     axios
-      .post(`http://localhost:4000/users/${userName}/watchlist`, {
-        movie_id,
-        name,
-        type,
-      })
+      .post(
+        `http://localhost:4000/${userName}/watchlist/${userName}/watchlist`,
+        {
+          movie_id,
+          name,
+          type,
+        }
+      )
       .then((response) => {
         console.log(response.data) // Pelicula agregada a la lista de favoritos
         setUserWatchlist([...userWatchlist, film])

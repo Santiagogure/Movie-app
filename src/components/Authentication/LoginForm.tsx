@@ -4,7 +4,8 @@ import axios from 'axios'
 import { AppContext } from '../../context/dataProvider'
 
 export const LoginForm = () => {
-  const { setUserPassword, setUserName } = useContext(AppContext)
+  const { setUserPassword, userName, setUserName, setIsLogin } =
+    useContext(AppContext)
 
   const [error, setError] = useState('')
   const [isLoading, setIsloading] = useState(false)
@@ -18,15 +19,13 @@ export const LoginForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
-
-    axios
-      .post('http://localhost:4000/login', { username, password })
+    await axios
+      .post('http://localhost:4000/login/login', { username, password })
       .then((response) => {
-        console.log('Exitosa' + response)
-        localStorage.setItem('username', response.data.username)
         setUserName(response.data.username)
+        localStorage.setItem('username', userName)
         setUserPassword(password)
-        redirect()
+        setIsLogin(true)
       })
       .catch((error) => {
         console.log('Se presento el error' + error)

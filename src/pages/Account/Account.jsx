@@ -20,9 +20,12 @@ const Account = () => {
 
   const handleUpdateUsername = async () => {
     try {
-      await axios.put(`http://localhost:4000/users/${userName}/username`, {
-        username: newUser,
-      })
+      await axios.put(
+        `http://localhost:4000/${userName}/update/${userName}/update`,
+        {
+          username: newUser,
+        }
+      )
       localStorage.setItem('username', newUser)
       setUserName(newUser)
     } catch (error) {

@@ -24,11 +24,9 @@ export default function DataProvider({ children }) {
     }
   }, [userName, userPassword])
 
-  useEffect(() => {}, [])
-
-  const getFavorites = () => {
-    axios
-      .get(`http://localhost:4000/users/${userName}/favorites`)
+  const getFavorites = async () => {
+    await axios
+      .get(`http://localhost:4000/${userName}/favorites/${userName}/favorites`)
       .then((response) => {
         setUserFavorites(response.data)
         console.log('Successful')
@@ -38,9 +36,9 @@ export default function DataProvider({ children }) {
       })
   }
 
-  const getWatchlist = () => {
-    axios
-      .get(`http://localhost:4000/users/${userName}/watchlist`)
+  const getWatchlist = async () => {
+    await axios
+      .get(`http://localhost:4000/${userName}/watchlist/${userName}/watchlist`)
       .then((res) => {
         setUserWatchlist(res.data)
       })
@@ -52,7 +50,7 @@ export default function DataProvider({ children }) {
   useEffect(() => {
     getFavorites()
     getWatchlist()
-  }, [])
+  }, [isLogin])
 
   const value = {
     userName,

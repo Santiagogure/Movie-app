@@ -21,7 +21,7 @@ export const Categories = ({
   const handleDeleteFavorite = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:4000/users/${userName}/favorites/${id}`,
+        `http://localhost:4000/${userName}/favorites/${id}/${userName}/favorites/${id}`,
         {
           username: userName,
           movie_id: id,
@@ -37,7 +37,7 @@ export const Categories = ({
   const handleDeleteWatchlist = async (id) => {
     try {
       await axios.delete(
-        `http://localhost:4000/users/${userName}/watchlist/${id}`,
+        `http://localhost:4000/${userName}/watchlist/${id}/${userName}/watchlist/${id}`,
         {
           username: userName,
           movie_id: id,
