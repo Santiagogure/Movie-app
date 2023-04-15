@@ -5,11 +5,13 @@ import { SearchBar } from '../../components/Common/SearchBar'
 import { Link, useNavigate } from 'react-router-dom'
 
 const LoginMobileHeader = React.memo(() => {
-  const { setMenuIsVisible, setIsLogin, userName } = useContext(AppContext)
+  const { setMenuIsVisible, setIsLogin, userName, imageUrl } =
+    useContext(AppContext)
 
   const handleLogOut = useCallback(() => {
     localStorage.clear()
     setIsLogin(false)
+    window.location.href = '/'
   }, [setIsLogin])
 
   return (
@@ -26,7 +28,7 @@ const LoginMobileHeader = React.memo(() => {
 
         <div className="flex relative right-2 items-center justify-center mt-10">
           <img
-            src="https://via.placeholder.com/150"
+            src={imageUrl ? imageUrl : 'https://via.placeholder.com/150'}
             alt="user profile"
             className="w-28 h-28 rounded-full object-cover"
           />

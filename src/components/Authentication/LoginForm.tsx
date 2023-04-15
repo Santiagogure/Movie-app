@@ -2,30 +2,29 @@ import React, { useContext, useState } from 'react'
 import { Bars } from 'react-loader-spinner'
 import axios from 'axios'
 import { AppContext } from '../../context/dataProvider'
+import { useNavigate } from 'react-router-dom'
 
 export const LoginForm = () => {
   const { setUserPassword, userName, setUserName, setIsLogin } =
     useContext(AppContext)
 
+  const navigate = useNavigate()
   const [error, setError] = useState('')
   const [isLoading, setIsloading] = useState(false)
   const [successful, setSuccessful] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  function redirect() {
-    window.location.href = '/'
-  }
-
   const handleSubmit = async (e: any) => {
     e.preventDefault()
     await axios
-      .post('http://localhost:4000/login/login', { username, password })
+      .post('http://localhost:4000/login', { username, password })
       .then((response) => {
         setUserName(response.data.username)
         localStorage.setItem('username', userName)
         setUserPassword(password)
         setIsLogin(true)
+        navigate('/')
       })
       .catch((error) => {
         console.log('Se presento el error' + error)

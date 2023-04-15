@@ -18,14 +18,17 @@ const Account = () => {
   const [newUser, setNewUser] = useState('')
   const [edit, setEdit] = useState(false)
 
+  useEffect(() => {
+    const fetchImage = async () => {}
+
+    fetchImage()
+  }, [userName])
+
   const handleUpdateUsername = async () => {
     try {
-      await axios.put(
-        `http://localhost:4000/${userName}/update/${userName}/update`,
-        {
-          username: newUser,
-        }
-      )
+      await axios.put(`http://localhost:4000/${userName}/update`, {
+        username: newUser,
+      })
       localStorage.setItem('username', newUser)
       setUserName(newUser)
     } catch (error) {
@@ -38,12 +41,23 @@ const Account = () => {
       const file = event.target.files[0]
       const reader = new FileReader()
       reader.readAsDataURL(file)
-      reader.onloadend = () => {
-        setImageUrl(reader.result)
+      reader.onloadend = async () => {
+        const imageUrl = reader.result
+        setImageUrl(imageUrl) // Establecer la URL de la imagen en el estado después de la lectura
+
+        const formData = new FormData()
+        formData.append('image', file)
+
+        await axios.post(
+          `http://localhost:4000/users/${userName}/image`,
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        )
       }
-      await axios.post(`http://localhost:4000/users/${userName}/image`, {
-        image: imageUrl,
-      })
     } catch (error) {
       console.error(error)
     }

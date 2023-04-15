@@ -8,6 +8,7 @@ const LogOut = () => {
   const handleLogOut = () => {
     localStorage.clear()
     setIsLogin(false)
+    window.location.href = '/'
   }
 
   return (

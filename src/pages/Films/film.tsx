@@ -96,14 +96,11 @@ export const Film = (props: Props) => {
         setAddedFav(true)
       }
       axios
-        .post(
-          `http://localhost:4000/${userName}/favorites/${userName}/favorites`,
-          {
-            movie_id,
-            name,
-            type,
-          }
-        )
+        .post(`http://localhost:4000/${userName}/favorites`, {
+          movie_id,
+          name,
+          type,
+        })
         .then((response) => {
           console.log(response.data) // Pelicula agregada a la lista de favoritos
           setUserFavorites([...(userFavorites || []), film])
@@ -121,14 +118,11 @@ export const Film = (props: Props) => {
       setAddedWatch(true)
     }
     axios
-      .post(
-        `http://localhost:4000/${userName}/watchlist/${userName}/watchlist`,
-        {
-          movie_id,
-          name,
-          type,
-        }
-      )
+      .post(`http://localhost:4000/${userName}/watchlist`, {
+        movie_id,
+        name,
+        type,
+      })
       .then((response) => {
         console.log(response.data) // Pelicula agregada a la lista de favoritos
         setUserWatchlist([...userWatchlist, film])
